@@ -1,0 +1,6 @@
+pandas
+Faker
+Unidecode
+openpyxl
+pyinstaller
+flask
