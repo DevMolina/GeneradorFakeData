@@ -17,16 +17,16 @@ class Persona:
         self.tipo = tipo
         if self.tipo == "Natural":
             self.razon_social = (unidecode(fake.first_name()))
-            self.nombre = " "
+            self.nombre = ''
             self.apellido = unidecode(fake.last_name())
-            self.documento = fake.random_number(digits=fake.random_int(min=7, max=10))
-            self.cod_ver = " "
+            self.documento = fake.random_number(digits=fake.random_int(min=10, max=10))
+            self.cod_ver = ''
             self.nit = fake.random_int(min=1, max=2)
         elif self.tipo == "Juridico":
             self.razon_social = unidecode(fake.company()).replace(',', ' ')
             self.nombre= unidecode(fake.name())
-            self.apellido = " "
-            self.documento = fake.random_number(digits=fake.random_int(min=8, max=9))
+            self.apellido = ''
+            self.documento = fake.random_number(digits=fake.random_int(min=9, max=9))
             self.cod_ver = calcular_dv_dian(self.documento)
             self.nit = '3'
         self.res_fiscal = fake.random_element(elements=("Declarante", "No Declarante", ""))
@@ -36,7 +36,7 @@ class Persona:
         self.mun = random.choice(mun_dep[self.dep])
         self.email = fake.email()
         self.cel = "3" + fake.numerify(text="#########")
-        self.tel_eme = " "
+        self.tel_eme = ''
         self.vehiculos = [Vehiculo() for _ in range(random.randint(min_veh, max_veh))]  # Crea entre 1 y 3 vehículos para cada persona
 
 class Vehiculo:
