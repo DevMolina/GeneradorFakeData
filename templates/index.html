@@ -32,8 +32,14 @@
         <h2 class="text-center mb-4">Generador de Datos</h2>
         <form action="/generate" method="post">
             <div class="mb-3">
-                <label for="cantidad" class="form-label">Cantidad de Usuarios</label>
-                <input type="number" class="form-control" id="cantidad" name="cantidad" value="10" required min="1">
+                <label for="cantidad_natural" class="form-label">Cantidad de Personas Naturales</label>
+                <input type="number" class="form-control" id="cantidad_natural" name="cantidad_natural" value="10"
+                    required min="1">
+            </div>
+            <div class="mb-3">
+                <label for="cantidad_juridico" class="form-label">Cantidad de Personas Jurídicas</label>
+                <input type="number" class="form-control" id="cantidad_juridico" name="cantidad_juridico" value="10"
+                    required min="1">
             </div>
             <div class="mb-3">
                 <label for="min_veh" class="form-label">Mínimo de Vehículos</label>

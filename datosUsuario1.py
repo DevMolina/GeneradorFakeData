@@ -34,7 +34,7 @@ class Persona:
         self.pais = random.choice(list(Paises.keys()))
         self.dep = random.choice(list(mun_dep.keys()))
         self.mun = random.choice(mun_dep[self.dep])
-        self.email = fake.email()
+        self.email = fake.email(domain='yopmail.com')
         self.cel = "3" + fake.numerify(text="#########")
         self.tel_eme = ''
         self.vehiculos = [Vehiculo() for _ in range(random.randint(min_veh, max_veh))]  # Crea entre 1 y 3 vehículos para cada persona

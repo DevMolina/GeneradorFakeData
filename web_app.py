@@ -13,7 +13,8 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     try:
-        cantidad = int(request.form['cantidad'])
+        cantidad_natural = int(request.form['cantidad_natural'])
+        cantidad_juridico = int(request.form['cantidad_juridico'])
         min_veh = int(request.form['min_veh'])
         max_veh = int(request.form['max_veh'])
         
@@ -22,7 +23,7 @@ def generate():
             return "Error: El mínimo de vehículos no puede ser mayor que el máximo.", 400
 
         # Generar datos usando la lógica compartida
-        datos = logic.generar_registros(cantidad, min_veh, max_veh)
+        datos = logic.generar_registros(cantidad_natural, cantidad_juridico, min_veh, max_veh)
         df = pd.DataFrame(datos)
 
         # Crear archivos en memoria
